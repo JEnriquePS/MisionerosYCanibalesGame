@@ -40,7 +40,7 @@ class Text:
 
 class Barco(pygame.sprite.Sprite):
     def __init__(self):
-        self.image = pygame.image.load("myc/bote1.png")
+        self.image = pygame.image.load("source/bote1.png")
         self.rect = self.image.get_rect()
         self.rect.centerx = 245
         self.rect.centery = 430
@@ -66,7 +66,7 @@ class Barco(pygame.sprite.Sprite):
 
 class Boton(pygame.sprite.Sprite):
     def __init__(self):
-        self.image = pygame.image.load("myc/home.png")
+        self.image = pygame.image.load("source/home.png")
         self.rect = self.image.get_rect()
         self.rect.centerx = 30
         self.rect.centery = 30
@@ -148,20 +148,20 @@ class Actor(pygame.sprite.Sprite):
 def jugar():
     pygame.display.set_caption("misioneros y canibales")
 
-    IMAGENFONDO = pygame.image.load("myc/night_sky.jpeg")
-    PuertoInicio = pygame.image.load('myc/puerto_inicio.png')
-    PuertoFinal = pygame.image.load('myc/puerto_final.png')
-    OLAS = pygame.image.load('myc/olas.png')
+    IMAGENFONDO = pygame.image.load("source/night_sky.jpeg")
+    PuertoInicio = pygame.image.load('source/puerto_inicio.png')
+    PuertoFinal = pygame.image.load('source/puerto_final.png')
+    OLAS = pygame.image.load('source/olas.png')
 
     barco = Barco()
     boton = Boton()
 
-    canibal_a = Actor((15, 400), (785, 400), "myc/canibal_.png", "myc/canibal_hover.png", "canibal")
-    canibal_b = Actor((50, 400), (750, 400), "myc/canibal_.png", "myc/canibal_hover.png", "canibal")
-    canibal_c = Actor((85, 400), (715, 400), "myc/canibal_.png", "myc/canibal_hover.png", "canibal")
-    misionero_a = Actor((120, 400), (680, 400), "myc/cura.png", "myc/cura_hover.png", "misionero")
-    misionero_b = Actor((155, 400), (645, 400), "myc/cura.png", "myc/cura_hover.png", "misionero")
-    misionero_c = Actor((190, 400), (610, 400), "myc/cura.png", "myc/cura_hover.png", "misionero")
+    canibal_a = Actor((15, 400), (785, 400), "source/canibal_.png", "source/canibal_hover.png", "canibal")
+    canibal_b = Actor((50, 400), (750, 400), "source/canibal_.png", "source/canibal_hover.png", "canibal")
+    canibal_c = Actor((85, 400), (715, 400), "source/canibal_.png", "source/canibal_hover.png", "canibal")
+    misionero_a = Actor((120, 400), (680, 400), "source/cura.png", "source/cura_hover.png", "misionero")
+    misionero_b = Actor((155, 400), (645, 400), "source/cura.png", "source/cura_hover.png", "misionero")
+    misionero_c = Actor((190, 400), (610, 400), "source/cura.png", "source/cura_hover.png", "misionero")
 
     actores_iniciales = [canibal_a, canibal_b, canibal_c, misionero_a, misionero_b, misionero_c]
     objetos_izquierda = []
@@ -359,7 +359,7 @@ def mostrar_actores(actores):
 def template_perdedor():
     opciones = [Text("Jugar de Nuevo", (260, 405), screen, font, (239, 111, 84), (239, 111, 66))]
     boton = Boton()
-    IMAGENFONDO = pygame.image.load("myc/gameover-myc.png")
+    IMAGENFONDO = pygame.image.load("source/gameover-myc.png")
     opciones_elegidas = {"jugar de nuevo": jugar}
     lista_opciones(IMAGENFONDO, opciones, opciones_elegidas, boton)
 
@@ -370,7 +370,7 @@ def template_integrantes():
                 Text("jenrique.ps@gmail.com", (100, 170), screen, font, (75, 60, 234), (75, 60, 234)),
                 Text("https://github.com/JEnriquePS/MisionerosYCanibalesGame", (0, 230), screen, font_small, (75, 60, 234), (75, 60, 234))]
 
-    IMAGENFONDO = pygame.image.load("myc/forest.jpg")
+    IMAGENFONDO = pygame.image.load("source/forest.jpg")
     boton = Boton()
     opciones_elegidas = []
     lista_opciones(IMAGENFONDO, opciones, opciones_elegidas, boton)
@@ -379,7 +379,7 @@ def template_integrantes():
 def template_ganador():
     opciones = [Text("Ganaste", (270, 250), screen, font, (255, 206, 54), (255, 159, 29))]
     boton = Boton()
-    IMAGENFONDO = pygame.image.load("myc/forest.jpg")
+    IMAGENFONDO = pygame.image.load("source/forest.jpg")
     opciones_elegidas = {'Jugar de nuevo': jugar}
     lista_opciones(IMAGENFONDO, opciones, opciones_elegidas, boton)
 
@@ -388,7 +388,7 @@ def main():
     opciones = [Text("Jugar", (300, 105), screen, font, (60, 70, 89), (66, 95, 156)),
                 Text("Integrantes", (300, 185), screen, font, (60, 70, 89), (66, 95, 156))]
 
-    IMAGENFONDO = pygame.image.load("myc/forest.jpg")
+    IMAGENFONDO = pygame.image.load("source/forest.jpg")
     opciones_elegidas = {'Jugar': jugar, 'Integrantes': template_integrantes}
     lista_opciones(IMAGENFONDO, opciones, opciones_elegidas)
 
